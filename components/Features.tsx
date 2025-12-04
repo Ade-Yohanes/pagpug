@@ -1,31 +1,33 @@
+import { Zap, Lock, Palette, BarChart3, Zap as Integration, Globe } from 'lucide-react';
+
 const features = [
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Lightning Fast",
     description: "Optimized for speed and performance with sub-millisecond response times.",
   },
   {
-    icon: "🔒",
+    icon: Lock,
     title: "Secure & Reliable",
     description: "Enterprise-grade security with 256-bit encryption and regular audits.",
   },
   {
-    icon: "🎨",
+    icon: Palette,
     title: "Beautiful Design",
     description: "Modern, responsive UI that works seamlessly across all devices.",
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Analytics",
     description: "Real-time insights and comprehensive analytics dashboard for your projects.",
   },
   {
-    icon: "🔄",
+    icon: Integration,
     title: "Easy Integration",
     description: "Seamless integration with your existing tools and workflows.",
   },
   {
-    icon: "🌍",
+    icon: Globe,
     title: "Global Scale",
     description: "Deploy worldwide with automatic CDN and multi-region support.",
   },
@@ -45,13 +47,15 @@ export default function Features() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {features.map((feature, index) => (
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
             <div
               key={index}
               className="p-6 sm:p-7 md:p-8 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="text-3xl sm:text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+              <div className="inline-flex p-3 bg-blue-100 rounded-lg mb-4 group-hover:bg-blue-200 transition-colors">
+                <Icon className="text-blue-600" size={24} />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 {feature.title}
@@ -60,7 +64,8 @@ export default function Features() {
                 {feature.description}
               </p>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

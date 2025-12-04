@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * JSON-LD Structured Data untuk SEO
  * Membantu search engines memahami konten dengan lebih baik
@@ -75,7 +73,7 @@ export function StructuredData() {
         },
         inLanguage: 'en-US',
         datePublished: '2023-01-01T00:00:00Z',
-        dateModified: new Date().toISOString(),
+        dateModified: '2025-12-02T00:00:00Z',
         primaryImageOfPage: {
           '@type': 'ImageObject',
           url: 'https://pagpug.com/og-image.jpg',
@@ -158,6 +156,7 @@ export function StructuredData() {
   return (
     <script
       type="application/ld+json"
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
     />
   );

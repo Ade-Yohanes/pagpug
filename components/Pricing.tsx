@@ -1,3 +1,5 @@
+import { Check } from 'lucide-react';
+
 const plans = [
   {
     name: "Starter",
@@ -65,8 +67,8 @@ export default function Pricing() {
               }`}
             >
               {plan.popular && (
-                <div className="mb-4 inline-block px-3 sm:px-4 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-semibold">
-                  Most Popular
+                <div className="mb-4 inline-flex items-center gap-1 px-3 sm:px-4 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-semibold">
+                  ⭐ Most Popular
                 </div>
               )}
               <h3 className={`text-xl sm:text-2xl font-bold mb-2 ${plan.popular ? "text-white" : "text-gray-900"}`}>
@@ -100,9 +102,7 @@ export default function Pricing() {
               <ul className="space-y-3 sm:space-y-4">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <span className={`text-lg sm:text-xl shrink-0 mt-0.5 ${plan.popular ? "text-white" : "text-blue-600"}`}>
-                      ✓
-                    </span>
+                    <Check size={20} className={`shrink-0 mt-0.5 ${plan.popular ? "text-white" : "text-blue-600"}`} />
                     <span className={`text-sm sm:text-base ${plan.popular ? "text-white/90" : "text-gray-700"}`}>
                       {feature}
                     </span>
